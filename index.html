@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Hangman</title>
+</head>
+
+  <body  style="background-color:powderblue;">
+    <div class="card">
+      <div class="card-body">
+        <h2  class="card-title" style= "color:rgb(255, 0, 0)" >The HANGMAN game</h2>
+       
+        <h4  class="card-subtitle mb-2 text-body-secondary">Press <button  id="startGame" type="button"   onclick= "chooseWord()">Play</button> to start the game!</h4>
+        <p id="lives"> </p> <!--Numarul de vieti -->
+        <p id="word"> </p> <!--Cuv. ales random-->
+        <p id="wordLength"></p> <!--Dimensiunea cuvantului-->
+        
+        <p id="array"></p> <!-- emptyLines Array -->
+        <p id="space"></p> <!--Spatii albe _ _ NEFOLOSIT-->
+        
+        <input type="text" id="myText" > <!--Litera de la tastatura-->
+
+        <button id="button">Verify</button>
+        <p id="displayInput"></p> <!--Litera afisata din input-->
+        <!--<button id="resetButton">Reset Game</button>-->
+      </div>
+    </div>
+   <script src="script.js"></script> 
+  </body>
+</html>
