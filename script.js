@@ -69,11 +69,11 @@ function display(){
  }
 }
 
-// trebuie sa mai lucrez la aceasta functionalitate
+/* trebuie sa mai lucrez la aceasta functionalitate
 const resetBtn = document.getElementById('resetButton').addEventListener("click", reset);
 function reset(){
- // inputLetter = document.getElementById('myText').value; // litera din input 
- // document.getElementById('displayInput').innerHTML  += inputLetter += " "; // o afisam pe pagina
- // change();
-  //display();
-}
+  inputLetter = document.getElementById('myText').value; // litera din input 
+  document.getElementById('displayInput').innerHTML  += inputLetter += " "; // o afisam pe pagina
+  change();
+  display();
+}*/
