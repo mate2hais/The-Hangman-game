@@ -1,19 +1,15 @@
-
 const wordsArray = ["tastatura", "ibric", "vant", "floare", "carte", "aragaz", "pistol", "pisica" ,"acasa", "vaza", "pahar", "amar"];
 let totalLives = 7;
-
-//aFISEZ CATE VIETI MAI RAMAN
-document.getElementById('lives').innerText = "Aveti " + totalLives + " vieti ramase";
+document.getElementById('lives').innerText =  "You have " + totalLives +  " lives left.";
 
 let variables = [];
 
-//AFISEZ CATE UN CUVANT RANDOM
 function chooseWord() { // Prima functie
   let posWord = Math.floor(Math.random() * wordsArray.length) ;
   word = wordsArray[posWord];
   console.log(posWord + " <--> " + word) ;
   document.getElementById('word').innerText = "" ;
-  document.getElementById('wordLength').innerText = "Cuvantul dumneavoastra contine " + word.length + " litere";
+  document.getElementById('wordLength').innerText = "Your word contains " + word.length + " letters.";
   for (var i = 0; i < word.length; ++i) {
     variables[i] =  "|_|";
   }
@@ -37,13 +33,13 @@ function change() {
   for (let z = 0; z < word.length; ++z) {
     document.getElementById('array').textContent = '';
     if (word[z] === document.getElementById('myText').value  && variables[z] != word[z]) { 
-     variables[z] =  document.getElementById('myText').value;
+      variables[z] =  document.getElementById('myText').value;
       flag = 0;
     } 
   }
 if (flag == 1) {
   --totalLives;
-  document.getElementById('lives').innerText = "Aveti " + totalLives + " vieti ramase";
+  document.getElementById('lives').innerText = "You have " + totalLives +  " lives left.";
 }
 result();
 }
@@ -56,10 +52,10 @@ function result() {
     }
   }
   if (flag2 == 1) {
-    console.log("Ai castigat !!!")
-    document.getElementById('word').innerText = "Felicitari!! Ai castigat jocul!";
+    console.log("You won !!!")
+    document.getElementById('word').innerText = "Congratulations! You won!";
   } else if (flag2 == 0 && totalLives == 0) {
-    document.getElementById('word').innerText = "Din pacate ai pierdut! Mai incearca!";
+    document.getElementById('word').innerText = "Unfortunately you lost! Try again!";
   }
 }
 
@@ -69,11 +65,25 @@ function display(){
  }
 }
 
-/* trebuie sa mai lucrez la aceasta functionalitate
 const resetBtn = document.getElementById('resetButton').addEventListener("click", reset);
 function reset(){
-  inputLetter = document.getElementById('myText').value; // litera din input 
-  document.getElementById('displayInput').innerHTML  += inputLetter += " "; // o afisam pe pagina
-  change();
-  display();
-}*/
+  for (var i = 0; i < word.length; ++i) {
+    variables[i] =  "";
+    document.getElementById('array').innerText = variables[i];
+  }
+  totalLives = 7;
+  document.getElementById('word').innerText = "" ;
+  document.getElementById('displayInput').innerHTML  = ""; 
+  document.getElementById('lives').innerText =  "You have " + totalLives +  " lives left.";
+  posWord = Math.floor(Math.random() * wordsArray.length) ;
+  word = wordsArray[posWord];
+  console.log(posWord + " <--> " + word) ;
+  document.getElementById('wordLength').innerText = "Your word contains " + word.length + " letters.";
+  for (var i = 0; i < word.length; ++i) {
+    variables[i] = "|_|";
+  }
+  for (var i = 0; i < word.length; ++i) {
+    document.getElementById('array').innerHTML += variables[i];
+    console.log(variables[i] + "<--")
+  }
+}
